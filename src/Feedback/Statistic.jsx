@@ -1,16 +1,33 @@
-const Statistic = ({ good, neutral, bad, total }) => {
+import styles from '../Feedback/feedBack.module.css';
+
+const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-  <ul>
-    <li>Good: {good}</li>
-    <li>Neutral:{neutral}</li>
-    <li>Bad:{bad}</li>
-      {/* <li>Positive Feedback:</li> */}
-    <li > Total:{total()}</li>
-  </ul>)
-
-//   let keys = Object.keys(data);
-
-//   keys.map(key => <li key={key}> Total:{() => total(key)}</li>);
- };
+    <div className={styles.btn__container}>
+      <ul className={styles.list}>
+        <li className={styles.item}>
+          {' '}
+          <span className={styles.text}>Good:</span> {good}
+        </li>
+        <li className={styles.item}>
+          <span className={styles.text}>Neutral:</span>
+          {neutral}
+        </li>
+        <li className={styles.item}>
+          <span className={styles.text}>Bad:</span>
+          {bad}
+        </li>
+        <li className={styles.item}>
+          <span className={styles.text}>Positive Feedback:</span>
+          {positivePercentage()}
+        </li>
+        <li className={styles.item}>
+          {' '}
+          <span className={styles.text}>Total:</span>
+          {total()}
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default Statistic;
