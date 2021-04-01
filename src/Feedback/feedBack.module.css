@@ -46,7 +46,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
 
-  color: darkred;
+  color: darkslategray;
 }
 .notification {
   display: none;
@@ -55,7 +55,12 @@
   justify-content: center;
 }
 .container {
+  width: 600px;
+  background-color: rgb(254, 254, 255);
   display: flex;
-  justify-content: center;
-  background-color: rgb(253, 252, 251);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 20%),
+    0px 2px 1px rgb(0 0 0 / 40%);
+    justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
 }

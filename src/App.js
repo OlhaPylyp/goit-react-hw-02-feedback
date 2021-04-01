@@ -16,7 +16,6 @@ class App extends Component {
 
   feedbackCounter = event => {
     this.setState(preState => {
-      
       return {
         [event]: preState[event] + 1,
       };
@@ -52,13 +51,15 @@ class App extends Component {
         </Section>
         <div>
           {Number.isFinite(isTotal) ? (
-            <Statistic
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              total={this.countTotalFeedback}
-              positivePercentage={this.positivePercentag}
-            />
+            <Section title="Statistic">
+              <Statistic
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={this.countTotalFeedback}
+                positivePercentage={this.positivePercentag}
+              />
+            </Section>
           ) : (
             <Notification message="No feedback given" />
           )}
