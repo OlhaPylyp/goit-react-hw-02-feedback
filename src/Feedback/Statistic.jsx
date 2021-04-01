@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
 import styles from '../Feedback/feedBack.module.css';
 
 const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
+  
   return (
     <div className={styles.btn__container}>
       <ul className={styles.list}>
@@ -18,7 +20,7 @@ const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
         </li>
         <li className={styles.item}>
           <span className={styles.text}>Positive Feedback:</span>
-          {positivePercentage()}
+          {positivePercentage()}%
         </li>
         <li className={styles.item}>
           {' '}
@@ -28,6 +30,14 @@ const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
       </ul>
     </div>
   );
+};
+
+Statistic.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.func,
+  positivePercentage: PropTypes.func,
 };
 
 export default Statistic;
