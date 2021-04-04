@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import styles from '../Feedback/feedBack.module.css';
 
 const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
-  
   return (
     <div className={styles.btn__container}>
       <ul className={styles.list}>
@@ -36,7 +35,7 @@ Statistic.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
-  total: PropTypes.func,
+  total: PropTypes.func.isRequired,
   positivePercentage: PropTypes.func,
 };
 
